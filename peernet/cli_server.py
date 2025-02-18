@@ -42,7 +42,9 @@ def server_main(
 
     # returns a new class with a callback method that wraps a call to DummyModel
     # infer with timing and message passing. ie is an instance of that "engine
-    ie = get_engine(model_name, device)
+    # ie = get_engine(model_name, device)
 
     # Setup the network to poll, calling back to whichever inference engine is used.
-    network.poll(num_iterations, ie.callback)
+    # network.poll(num_iterations, ie.callback)
+    network.poll(num_iterations, lambda msg: logger.debug(f"Received message: {msg}"))
+
