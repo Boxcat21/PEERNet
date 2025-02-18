@@ -1,5 +1,5 @@
 """Server side implementation of offloaded inference CLI."""
-from peernet.inference import get_engine
+# from peernet.inference import get_engine
 
 import omegaconf
 

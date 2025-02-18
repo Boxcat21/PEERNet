@@ -15,7 +15,7 @@ class RandomString:
     def __init__(self) -> None:  # noqa: D107
         pass
 
-    def sample(self, size: int) -> str:
+    def sample(self, size: int = 100) -> str:
         """Returns a random string of length size.
 
         Args:
