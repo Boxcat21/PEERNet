@@ -31,6 +31,8 @@ def client_main(
     results: pathlib.Path,
     plot: bool,
 ):
+    
+
     """Main method for client side."""
     # Make sure the path is ok first and error out if it's not
     if results.exists():
@@ -44,8 +46,9 @@ def client_main(
     # Network configuration stuffs
     net_config = omegaconf.OmegaConf.load(net_config_file)
     if net_type == "zmq-tcp":
-        logger.debug("Setting up zmq tcp network")
+        logger.debug("Setting up zmq tcp network with device name: %s", device_name)
         from peernet.networks import ZMQ_Pair
+        # import pdb; pdb.set_trace()
 
         network = ZMQ_Pair(device_name=device_name, **net_config)
 

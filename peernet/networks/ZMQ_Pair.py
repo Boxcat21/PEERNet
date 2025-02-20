@@ -20,6 +20,8 @@ class ZMQ_Pair(BaseNetwork):
     """
 
     def __init__(self, device_name, start_port=5551, verbose=0, *args, **kwargs):
+        # import pdb; pdb.set_trace() # DEBUG
+
         """Constructor."""
         super().__init__(verbose=verbose, **kwargs)
 
@@ -33,6 +35,8 @@ class ZMQ_Pair(BaseNetwork):
             self.logger.setLevel(logging.CRITICAL)
         self.logger.addHandler(ch)
 
+
+        print('self.device_number', self.device_number)
         # Who am I?
         if device_name in self.device_number:
             self.name = device_name

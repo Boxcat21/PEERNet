@@ -80,6 +80,7 @@ def main(
     device,
     generate_plots,
 ):
+
     """Entrypoint."""
     for path in sys.path:
         logger.debug(path)

@@ -23,6 +23,7 @@ def server_main(
     """Main method for cli server."""
     # Cases on network type
     net_config = omegaconf.OmegaConf.load(net_config_file)
+
     if net_type == "zmq-tcp":
         logger.debug("Setting up zmq tcp network")
         from peernet.networks import ZMQ_Pair
