@@ -4,7 +4,8 @@ import time
 # Initialize ZeroMQ context and socket
 context = zmq.Context()
 socket = context.socket(zmq.REP)  # REP = Reply
-socket.bind("tcp://*:5555")  # Binding to port 5555
+port = '49152'
+socket.bind("tcp://*:" + port)  # Binding to port 5555
 
 print("Server is waiting for requests...")
 
@@ -20,6 +21,7 @@ while True:
             time.sleep(1)
             socket.send_string("Hello from the server!")
             print("Sent reply to the client.")
+            break  # Break out of loop after sending a reply
         else:
             # No message received, check if it's an issue with waiting
             print("No message received, waiting for a request...")

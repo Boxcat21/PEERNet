@@ -4,7 +4,10 @@ import time
 # Initialize ZeroMQ context and socket
 context = zmq.Context()
 socket = context.socket(zmq.REQ)  # REQ = Request
-socket.connect("tcp://192.168.4.182:5555")  # Replace <Server_IP> with the IP of Machine 1
+# ip = '192.168.4.188'
+ip = '127.0.1.1'
+port = '49152'
+socket.connect("tcp://" + ip + ":" + port)  # Replace <Server_IP> with the IP of Machine 1
 
 print("Client is sending request to the server...")
 
