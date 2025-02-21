@@ -5,7 +5,7 @@ import time
 context = zmq.Context()
 socket = context.socket(zmq.REP)  # REP = Reply
 port = '49152'
-socket.bind("tcp://*:" + port)  # Binding to port 5555
+socket.bind("tcp://*:" + port)  # Binding to port 49152
 
 print("Server is waiting for requests...")
 
@@ -28,8 +28,9 @@ while True:
 
     except zmq.Again:
         # This exception is raised when no message is received (non-blocking mode)
-        print("No request received yet, retrying... ({})".format(cnt))
-        time.sleep(1)  # Pause for a moment before checking again
+        # print("No request received yet, retrying... ({})".format(cnt))
+        # time.sleep(1)  # Pause for a moment before checking again
+        pass
     except Exception as e:
         print(f"Error: {e}")
         break
