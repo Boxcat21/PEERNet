@@ -24,9 +24,11 @@ class RandomString:
         Returns:
             None
         """
-        # Generate random integers
-        random_bytes = np.random.randint(32, 127, size=size)
+        
+        # # Generate random integers
+        # random_bytes = np.random.randint(32, 127, size=size)
 
-        # Convert integers to characters
-        random_chars = [chr(byte) for byte in random_bytes]
-        return "".join(random_chars)
+        # # Convert integers to characters
+        # random_chars = [chr(byte) for byte in random_bytes]
+        # return "".join(random_chars)
+        return "Hello, world! This is a message from the random string sensor. "

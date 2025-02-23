@@ -90,6 +90,7 @@ def client_main(
         # Block while waiting for a response
         recv_msg: Message = network.recv(net_config.server)
 
+        print(f"Received message: {recv_msg}")
         # Copy the recv_message logger after ending the download time
         recv_msg.logger.end_sub("download")
         iter_l.copy_from(recv_msg.logger)
