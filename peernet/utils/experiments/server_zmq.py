@@ -4,7 +4,7 @@ import time
 # Initialize ZeroMQ context and socket
 context = zmq.Context()
 socket = context.socket(zmq.REP)  # REP = Reply
-port = '49152'
+port = '5000'
 socket.bind("tcp://*:" + port)  # Binding to port 49152
 
 print("Server is waiting for requests...")
